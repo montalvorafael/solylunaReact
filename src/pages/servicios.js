@@ -20,10 +20,11 @@ class Servicios extends React.Component{
             <li class="hidden-xs probootstrap-logo-center"><a href="/"><img src="img/LogoSolyLuna1.png" class="hires" width="181" height="50" alt="Free Bootstrap Template by uicookies.com"/></a></li>
             <li><a href="/">Principal</a></li>
             <li><a href="noticias">Noticias</a></li>
-            <li class="servicios"><a href="about.html">Servicios</a></li>            
+            <li class="active"><a href="servicios">Servicios</a></li>            
             <li><a href="habitaciones">Habitaciones</a></li>
             <li><a href="contactenos">Contáctenos</a></li>
             <li><a href="equipo">Equipo de desarrollo</a></li>
+            <li><a href="login">Inicio de sesion</a></li>
           </ul>
           <div class="extra-text visible-xs">
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>

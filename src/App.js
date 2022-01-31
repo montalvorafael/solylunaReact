@@ -7,6 +7,8 @@ import Noticias from "./pages/noticias";
 import Habitaciones from "./pages/habitacione";
 import Contactenos from "./pages/contactenos";
 import Equipo from "./pages/equipo";
+import Login from "./pages/login"
+import Usuario from "./pages/usuario"
 function App() {
   return (
     <Router>
@@ -17,6 +19,8 @@ function App() {
         <Route exact path="/habitaciones" render={(props) => <Habitaciones {...props} />} />
         <Route exact path="/contactenos" render={(props) => <Contactenos {...props} />} />
         <Route exact path="/equipo" render={(props) => <Equipo {...props} />} />
+        <Route exact path="/login" render={(props) => <Login {...props} />} />
+        <Route exact path="/dashboard" render={(props) => <Usuario {...props} />} />
 
 
       </Switch>

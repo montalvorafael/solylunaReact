@@ -23,6 +23,7 @@ class Habitaciones extends React.Component{
 						<li class="active"><a href="habitaciones">Habitaciones</a></li>
 						<li><a href="contactenos">Contáctenos</a></li>
 						<li><a href="equipo">Equipo de desarrollo</a></li>
+						<li><a href="login">Inicio de sesion</a></li>
 					</ul>
 					<div class="extra-text visible-xs">
 						<a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>

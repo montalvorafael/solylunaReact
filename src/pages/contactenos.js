@@ -18,12 +18,13 @@ class Contactenos extends React.Component{
 				<nav role="navigation" class="probootstrap-nav hidden-xs">
 					<ul class="probootstrap-main-nav">
 						<li class="hidden-xs probootstrap-logo-center"><a href="/"><img src="img/LogoSolyLuna1.png" class="hires" width="181" height="50" alt="Free Bootstrap Template by uicookies.com"/></a></li>
-						<li><a href="/l">Principal</a></li>
+						<li><a href="/">Principal</a></li>
 						<li><a href="noticias">Noticias</a></li>
 						<li><a href="servicios">Servicios</a></li>
 						<li><a href="habitaciones">Habitaciones</a></li>
 						<li class="active"><a href="contactenos">Contáctenos</a></li>
 						<li><a href="equipo">Equipo de desarrollo</a></li>
+						<li><a href="login">Inicio de sesion</a></li>
 					</ul>
 					<div class="extra-text visible-xs">
 						<a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
@@ -65,8 +66,10 @@ class Contactenos extends React.Component{
 				<div class="row probootstrap-gutter60">
 					<div class="col-md-8" data-title= "Formulario de contacto" data-intro= "Registre sus datos">
 						<h2 class="mt0">Formulario de contacto</h2>
+						
 
 						<form action="#" method="post" class="probootstrap-form">
+							
 							<div class="row">
 								<div class="panel panel-danger">
 									<div class="panel-heading">Paso 1</div>
