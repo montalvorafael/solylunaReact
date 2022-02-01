@@ -1,10 +1,25 @@
-import React from 'react'
+import React from 'react';
+import Cookie from 'universal-cookie';
+var cookie = new Cookie();
 
 class Usuario extends React.Component {
 
 	render() {
+
+    function getCookie(user) {
+			var userEQ = user + "=";
+			var ca = document.cookie.split(';');
+			for(var i=0;i < ca.length;i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ') c = c.substring(1,c.length);
+				if (c.indexOf(userEQ) == 0) return c.substring(userEQ.length,c.length);
+			}
+			return null;
+		}
+    console.log(getCookie('username'))
 		
 		return (
+      
 			<div>
 				
 			{/* 	<!-- Content Wrapper --> */}
@@ -59,7 +74,7 @@ class Usuario extends React.Component {
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{getCookie('username')}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg"/>
                             </a>
