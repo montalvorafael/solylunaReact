@@ -17,6 +17,12 @@ class Usuario extends React.Component {
 			return null;
 		}
     console.log(getCookie('username'))
+    
+    function cerrarSesion(){
+      document.cookie = 'username=; max-age=0';
+      window.location.href='http://localhost:3000/login';
+
+    }
 		
 		return (
       
@@ -84,7 +90,7 @@ class Usuario extends React.Component {
                                 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"  ></i>
                                     Logout
                                 </a>
                             </div>
@@ -277,7 +283,10 @@ class Usuario extends React.Component {
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/">Logout</a>
+                    <a class="btn btn-primary" 
+                    // href="/"
+                    onClick={() => cerrarSesion()} 
+                    >Logout</a>
                 </div>
             </div>
         </div>
