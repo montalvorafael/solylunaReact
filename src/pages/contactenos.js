@@ -1,8 +1,61 @@
 import React from 'react'
 
 class Contactenos extends React.Component{
+
+	state = {
+		nombres: "",
+		apellidos: "",
+		correo_cliente: "",
+		lugar_origen: "",
+		mensaje: ""
+	  };
     
     render(){
+
+		async function peticion(datos) {
+			console.log(datos)
+			try {
+				const response = await fetch('http://localhost:3001/api/contacto', {
+				  method: 'post',
+				  headers: {
+					"Content-Type": "application/json"
+				  },
+				  body: JSON.stringify(datos)
+				});
+			  
+				if (!response.ok) {
+				  alert("Usuario no encontrado!")
+				  const message = 'Error with Status Code: ' + response.status;
+				  throw new Error(message);
+				  
+				}
+			  
+				const data = await response.json();
+				console.log(data);
+				alert("Pronto nos comunicaremos con usted")
+			}catch (error) {
+				console.log('Error: ' + error);
+			}
+		}
+
+		const onInputChange = (e) => {
+			this.setState({[e.target.name]: e.target.value });
+		};
+
+		function informacion(){
+			let datos = {
+				nombres: document.getElementById("nombres").value,
+				apellidos: document.getElementById("apellidos").value,
+				correo_cliente: document.getElementById("correo_cliente").value,
+				lugar_origen: document.getElementById("lugar_origen").value,
+				mensaje: document.getElementById("mensaje").value
+			};
+			console.log(datos)
+			
+			peticion(datos)
+			// console.log(this.state)
+		}
+
         return(
             <div>
                {/*  <!-- START: header --> */}
@@ -77,13 +130,17 @@ class Contactenos extends React.Component{
 										<div class="col-md-6">
 											<div class="form-group">
 												<label for="fname">nombres</label>
-												<input type="text" class="form-control" id="fname" name="fname" required data-title= "nombre" data-intro= "digite su nombre"/>
+												<input type="text" class="form-control" id="nombres" name="nombres" required data-title= "nombres" data-intro= "digite su nombre"
+												onChange={(e) => onInputChange(e)}
+												/>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label for="lname">apellidos</label>
-												<input type="text" class="form-control" id="lname" name="lname" required data-title= "apellidos" data-intro= "digite sus apellidos"/>
+												<input type="text" class="form-control" id="apellidos" name="apellidos" required data-title= "apellido" data-intro= "digite sus apellidos"
+												onChange={(e) => onInputChange(e)}
+												/>
 											</div>
 										</div>
 									</div>
@@ -94,11 +151,15 @@ class Contactenos extends React.Component{
 								<div class="panel-body">
 									<div class="form-group">
 										<label for="email">Correo</label>
-										<input type="email" class="form-control" id="email" name="email" required data-title= "Correo electrónico" data-intro= "Digite su correo electrónico"/>
+										<input type="email" class="form-control" id="correo_cliente" name="correo_cliente" required data-title= "Correo electrónico" data-intro= "Digite su correo electrónico"
+										onChange={(e) => onInputChange(e)}
+										/>
 									</div>
 									<div class="form-group">
 										<label for="city">Lugar de origen</label>
-										<input type="text" class="form-control" id="city" name="city" data-title= "Lugar de origen" data-intro= "Digite su lugar de origen"/>
+										<input type="text" class="form-control" id="lugar_origen" name="lugar_origen" data-title= "Lugar de origen" data-intro= "Digite su lugar de origen"
+										onChange={(e) => onInputChange(e)}
+										/>
 									</div>
 
 								</div>
@@ -108,13 +169,19 @@ class Contactenos extends React.Component{
 								<div class="panel-body">
 									<div class="form-group">
 										<label for="message">Mensaje</label>
-										<textarea cols="30" rows="10" class="form-control" id="message" name="message" required data-title= "Mensaje" data-intro= "Escriba el mensaje que desea enviar"></textarea>
+										<textarea cols="30" rows="10" class="form-control" id="mensaje" name="mensaje" required data-title= "Mensaje" data-intro= "Escriba el mensaje que desea enviar"
+										onChange={(e) => onInputChange(e)}
+										></textarea>
 									</div>
 
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="submit" class="btn btn-primary btn-lg" id="submit" name="submit" value="Enviar" data-title= "Enviar" data-intro= "Envie su formulario"/>
+								<input 
+								// type="submit"
+								 class="btn btn-primary btn-lg" id="submit" name="submit" value="Enviar" data-title= "Enviar" data-intro= "Envie su formulario"
+								onClick={() => informacion()}
+								/>
 							</div>
 						</form>
 					</div>

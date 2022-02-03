@@ -189,17 +189,12 @@ class Usuario extends React.Component {
                 </li>
               </ul>
             </nav>
-            {/*  <!-- End of Topbar --> */}
-
-            {/* <!-- Begin Page Content --> */}
             <div className="container-fluid">
-              {/*   <!-- Page Heading --> */}
-              <h1 className="h3 mb-2 text-gray-800">Reservas de nombre</h1>
+              <h1 className="h3 mb-2 text-gray-800">Reservas de {getCookie("username")}</h1>
               <p className="mb-4">
                 Historial de reservas registrados en la hosteria Sol y Luna.
               </p>
 
-              {/*  <!-- DataTales Example --> */}
               <div className="card shadow mb-4">
                 <div className="card-header py-3">
                   <h6 className="m-0 font-weight-bold text-primary">
@@ -207,18 +202,18 @@ class Usuario extends React.Component {
                   </h6>
                 </div>
                 <div className="card-body">
-                  <div className="card">
-                    <div className="card-body">
-                      <div className="text-center px-xl-3">
-                        <div className="table-responsive">
-                          <table
+                  {/* <div className="card"> */}
+                    {/* <div className="card-body"> */}
+                      {/* <div className="text-center px-xl-3"> */}
+                        {/* <div className="table-responsive"> */}
+                          
+                          {/* <table
                             className="table table-bordered"
                             id="dataTable"
                             width="100%"
                             cellSpacing="0"
-                          >
-                            {/* <thead> 0*/}
-                            <tr>
+                          > */}
+                            {/* <tr>
                               <td>
                                 <button
                                   className="btn btn-success btn-block"
@@ -228,23 +223,19 @@ class Usuario extends React.Component {
                                 >
                                   Nuevo Usuario
                                 </button>
-                              </td>
-                              {/* <br></br> */}
-                              <td>
+                              </td> */}
+                              {/* <td>
                                 <button
                                   className="btn btn-success btn-block"
                                   type="button"
-                                  // data-toggle="modal"
                                   data-target="#user-form-modal"
                                   onClick={() => cerrarSesion()}
                                 >
                                   Editar
                                 </button>
-                              </td>
+                              </td> */}
 
-                              {/* <td><button className="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Eliminar</button></td> */}
-
-                              <td>
+                              {/* <td>
                                 <button
                                   type="button"
                                   class="btn btn-primary"
@@ -253,20 +244,13 @@ class Usuario extends React.Component {
                                 >
                                   Eliminar reserva
                                 </button>
-                              </td>
-                            </tr>
-                            {/* </thead> */}
-                          </table>
-                        </div>
-                        {/* <tr>
-                                              <td><button className="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Nuevo Usuario</button></td>
-                                              <br></br>
-                                              <td><button className="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Nuevo Usuario2</button></td>
-                                              </tr> */}
-                      </div>
-                      {/* <hr className="my-1"/> */}
-                    </div>
-                  </div>
+                              </td> */}
+                            {/* </tr>
+                          </table> */}
+                        {/* </div> */}
+                      {/* </div> */}
+                    {/* </div> */}
+                  {/* </div> */}
                   <div className="table-responsive">
                     <table
                       className="table table-bordered"
