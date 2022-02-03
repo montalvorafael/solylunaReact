@@ -11,6 +11,9 @@ class Contactenos extends React.Component{
 	  };
     
     render(){
+		function limpiar(){
+			document.getElementById("formulario").reset()
+		}
 
 		async function peticion(datos) {
 			console.log(datos)
@@ -33,6 +36,7 @@ class Contactenos extends React.Component{
 				const data = await response.json();
 				console.log(data);
 				alert("Pronto nos comunicaremos con usted")
+				limpiar()
 			}catch (error) {
 				console.log('Error: ' + error);
 			}
@@ -121,7 +125,7 @@ class Contactenos extends React.Component{
 						<h2 class="mt0">Formulario de contacto</h2>
 						
 
-						<form action="#" method="post" class="probootstrap-form">
+						<form action="#" method="post" id='formulario' class="probootstrap-form">
 							
 							<div class="row">
 								<div class="panel panel-danger">
